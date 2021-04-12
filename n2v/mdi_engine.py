@@ -36,9 +36,7 @@ def execute_command(command, comm, self):
     if command == "EXIT":
         self.exit_flag = True
 
-    #Bueno supongo que es aqui donde uno tiene que comunicar con el Driver
-    #Entonces todo esto tiene que estar dentro del driver (????)
-
+    # Communicates with driver. 
     # Engine <-> Driver
     # Send Commands
     elif command == "<NATOMS":
@@ -47,18 +45,18 @@ def execute_command(command, comm, self):
         mdi.MDI_Send(self.coords, 3 * self.natoms, mdi.MDI_DOUBLE, comm)
 
     # Receive Commands
-        elif command == ">NDENSITY":
-            pass
-        elif command == ">CDENSITY":
-            pass
-        elif command == ">DENSITY":
-            pass
-        elif command == ">NPOTENTIAL":
-            pass
-        elif command == ">CPOTENTIAL":
-            pass
-        elif command == ">POTENTIAL":
-            pass
+    elif command == ">NDENSITY":
+        pass
+    elif command == ">CDENSITY":
+        pass
+    elif command == ">DENSITY":
+        pass
+    elif command == ">NPOTENTIAL":
+        pass
+    elif command == ">CPOTENTIAL":
+        pass
+    elif command == ">POTENTIAL":
+        pass
 
     # Create numpy byte array?
     elif command == "<FORCES_B":
